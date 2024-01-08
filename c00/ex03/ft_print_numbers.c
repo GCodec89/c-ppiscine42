@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:17:53 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 15:54:53 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/08 15:46:19 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/08 15:57:36 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
+#include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_print_numbers(void)
 {
-	write(1, &c, 1);
+	char	n;
+
+	n = '0';
+	while (n <= '9')
+	{
+		write(1, &n, 1);
+		n++;
+	}
 }
 
 /*int	main(void)
 {
-	ft_putchar('c');
+	ft_print_numbers();
 }*/

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 15:17:53 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 15:54:53 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/08 15:43:56 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/08 15:56:38 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
+#include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_print_reverse_alphabet(void)
 {
-	write(1, &c, 1);
+	char	c;
+
+	c = 'z';
+	while (c >= 'a')
+	{
+		write(1, &c, 1);
+		c--;
+	}
 }
 
 /*int	main(void)
 {
-	ft_putchar('c');
+	ft_print_reverse_alphabet();
 }*/
