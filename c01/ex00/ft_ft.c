@@ -1,47 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 06:36:39 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 07:19:27 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_print_comb(void)
+void	ft_ft(int *nbr)
 {
-	char	a;
-	char	b;
-	char	c;
-
-	a = '0';
-	while (a <= '7')
-	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
-	}
-	write(1, "\n", 1);
+	*nbr = 42;
 }
 
-/*int	main(void)
+int	main(void)
 {
-	ft_print_comb();
-}*/
+	int	n;
+	int	*ptr;
+
+	n = 21;
+	ptr = &n;
+
+	printf("%d\n", n);
+	ft_ft(ptr);
+	printf("%d\n", n);
+}

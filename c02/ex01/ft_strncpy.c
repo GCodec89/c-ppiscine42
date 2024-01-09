@@ -1,47 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 08:55:01 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 09:26:46 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>
+#include <string.h>*/
 
-void	ft_print_comb(void)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	char	a;
-	char	b;
-	char	c;
+	unsigned int	i;
 
-	a = '0';
-	while (a <= '7')
+	i = 0;
+	while (src[i] != '\0' && i < n)
 	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
+		dest[i] = src[i];
+		i++;
 	}
-	write(1, "\n", 1);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	char	str1[] = "AAAAAAaaa";
+	char	str2[] = "Vagabundo";
+	unsigned int	n;
+
+	n = 6;
+	printf("%s\n", ft_strncpy(str1, str2, n));
+	printf("%s\n", strncpy(str1, str2, n));
 }*/

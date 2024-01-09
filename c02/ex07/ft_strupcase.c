@@ -1,47 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 13:48:27 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 14:01:53 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_print_comb(void)
+char	*ft_strupcase(char *str)
 {
-	char	a;
-	char	b;
-	char	c;
+	int	i;
 
-	a = '0';
-	while (a <= '7')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		b = a + 1;
-		while (b <= '8')
+		while (str[i] >= 97 && str[i] <= 122)
 		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
+			str[i] = str[i] - 32;
 		}
-		a++;
+		i++;
 	}
-	write(1, "\n", 1);
+	return (str);
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	char	str1[] = "D1llaz";
+
+	printf("%s\n", ft_strupcase(str1));
 }*/

@@ -1,47 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 06:38:29 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 07:32:57 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_print_comb(void)
+void	ft_swap(int *a, int *b)
 {
-	char	a;
-	char	b;
-	char	c;
+	int	aux;
 
-	a = '0';
-	while (a <= '7')
-	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
-	}
-	write(1, "\n", 1);
+	aux = *a;
+	*a = *b;
+	*b = aux;
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	int	a;
+	int	b;
+
+	a = 2;
+	b = 10;
+	printf("%d\n", a);
+	printf("%d\n", b);
+	ft_swap(&a, &b);
+	printf("%d\n", a);
+	printf("%d\n", b);
 }*/

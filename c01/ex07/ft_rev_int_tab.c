@@ -1,47 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 06:42:47 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 08:04:59 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_print_comb(void)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	char	a;
-	char	b;
-	char	c;
+	int	i;
+	int	swap;
 
-	a = '0';
-	while (a <= '7')
+	i = 0;
+	while (i < (size / 2))
 	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
+		swap = tab[i];
+		tab [i] = tab [size - 1 - i];
+		tab [size - 1 - i] = swap;
+		i++;
 	}
-	write(1, "\n", 1);
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	int	tab[5] = {1, 2, 4, 6, 8};
+	int	size = 5;
+
+	printf("%d, %d, %d, %d, %d\n", tab[0], tab[1], tab[2], tab[3], tab[4]);
+	ft_rev_int_tab(tab, size);
+	printf("%d, %d, %d, %d, %d\n", tab[0], tab[1], tab[2], tab[3], tab[4]);
 }*/

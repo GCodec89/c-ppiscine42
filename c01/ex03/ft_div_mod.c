@@ -1,47 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 06:38:58 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 07:39:09 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_print_comb(void)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	char	a;
-	char	b;
-	char	c;
-
-	a = '0';
-	while (a <= '7')
-	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
-	}
-	write(1, "\n", 1);
+	*div = a / b;
+	*mod = a % b;
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	int	a;
+	int	b;
+	int	div;
+	int	mod;
+
+	a = 10;
+	b = 2;
+	ft_div_mod(a, b, &div, &mod);
+	printf("%d\n", div);
+	printf("%d\n", mod);
 }*/

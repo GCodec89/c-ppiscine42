@@ -1,47 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 08:38:34 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 08:57:29 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_print_comb(void)
+char	*ft_strcpy(char *dest, char *src)
 {
-	char	a;
-	char	b;
-	char	c;
+	int	i;
 
-	a = '0';
-	while (a <= '7')
+	i = 0;
+	while (src[i] != '\0')
 	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
+		dest[i] = src[i];
+		i++;
 	}
-	write(1, "\n", 1);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	char	str1[] = "Tarzan";
+	char	str2[] = "Jane";
+
+	printf("%s\n", ft_strcpy(str1, str2));
 }*/

@@ -1,47 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 12:46:23 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 12:49:42 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_print_comb(void)
+int	ft_str_is_uppercase(char *str)
 {
-	char	a;
-	char	b;
-	char	c;
-
-	a = '0';
-	while (a <= '7')
+	while (*str != '\0')
 	{
-		b = a + 1;
-		while (b <= '8')
+		if (*str > 90 || *str < 65)
 		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
+			return (0);
 		}
-		a++;
+		str++;
 	}
-	write(1, "\n", 1);
+	return (1);
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	char	*str1;
+
+	str1 = "ok";
+	printf("%d\n", ft_str_is_uppercase(str1));
 }*/

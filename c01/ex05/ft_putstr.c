@@ -1,47 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 16:03:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 21:24:00 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/09 06:41:55 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/09 06:54:15 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_comb(void)
+void	ft_putchar(char c)
 {
-	char	a;
-	char	b;
-	char	c;
+	write(1, &c, 1);
+}
 
-	a = '0';
-	while (a <= '7')
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
 	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write(1, &a, 1);
-				write(1, &b, 1);
-				write(1, &c, 1);
-				if (a != '7' || b != '8' || c != '9')
-					write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
+		ft_putchar(*str);
+		str++;
 	}
-	write(1, "\n", 1);
+	ft_putchar('\n');
 }
 
 /*int	main(void)
 {
-	ft_print_comb();
+	char	*str1;
+
+	str1 = "Aconteça o que aconteça";
+	ft_putstr(str1);
 }*/
