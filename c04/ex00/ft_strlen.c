@@ -1,48 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 09:57:22 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/11 14:16:05 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/10 18:57:35 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/10 19:05:40 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <string.h>
-#include <stdio.h>*/
+/*#include <stdio.h>*/
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_strlen(char *str)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
-	}
-	j = 0;
-	while (src[j] != '\0' && (j < (size -1)))
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	if (size != '\0')
-	{
-		dest[j] = '\0';
 	}
 	return (i);
 }
 
 /*int	main(void)
 {
-	char			dest[1];
-	char			src[] = "Carolina Michaelis";
-	unsigned int	s;
+	char	str1[] = "Conta-me";
 
-	s = sizeof(dest);
-	printf("%d\n", ft_strlcpy(dest, src, s));
-	printf("%lu\n", strlcpy(dest, src, s));
+	printf("%d\n", ft_strlen(str1));
 }*/

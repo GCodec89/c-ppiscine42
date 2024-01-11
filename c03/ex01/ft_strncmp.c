@@ -1,48 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 09:57:22 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/11 14:16:05 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/10 11:59:06 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/10 12:07:33 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <string.h>
 #include <stdio.h>*/
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
-	unsigned int	j;
+	int				res;
 
 	i = 0;
-	while (src[i] != '\0')
+	res = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
+		if (s1[i] != s2[i])
+		{
+			res = s1[i] - s2[i];
+		}
 		i++;
 	}
-	j = 0;
-	while (src[j] != '\0' && (j < (size -1)))
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	if (size != '\0')
-	{
-		dest[j] = '\0';
-	}
-	return (i);
+	return (res);
 }
 
 /*int	main(void)
 {
-	char			dest[1];
-	char			src[] = "Carolina Michaelis";
-	unsigned int	s;
+	char			str1[] = "SamThaKid";
+	char			str2[] = "SamTheKid";
+	unsigned int	n;
 
-	s = sizeof(dest);
-	printf("%d\n", ft_strlcpy(dest, src, s));
-	printf("%lu\n", strlcpy(dest, src, s));
+	n = 6;
+	printf("%d\n", ft_strncmp(str1, str2, n));
+	printf("%d\n", strncmp(str1, str2, n));
 }*/

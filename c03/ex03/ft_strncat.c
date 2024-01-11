@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 09:57:22 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/11 14:16:05 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/10 13:37:41 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/10 13:47:26 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <string.h>
-#include <stdio.h>*/
+/*#include <stdio.h>*/
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
 	unsigned int	j;
 
 	i = 0;
-	while (src[i] != '\0')
+	j = 0;
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	j = 0;
-	while (src[j] != '\0' && (j < (size -1)))
+	while (src[j] != '\0' && j < nb)
 	{
-		dest[j] = src[j];
+		dest[i] = src[j];
 		j++;
+		i++;
 	}
-	if (size != '\0')
-	{
-		dest[j] = '\0';
-	}
-	return (i);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*int	main(void)
 {
-	char			dest[1];
-	char			src[] = "Carolina Michaelis";
-	unsigned int	s;
+	char			str1[] = "Dont ";
+	char			str2[] = "Rush";
+	unsigned int	n;
 
-	s = sizeof(dest);
-	printf("%d\n", ft_strlcpy(dest, src, s));
-	printf("%lu\n", strlcpy(dest, src, s));
+	n = 2;
+	printf("%s\n", ft_strncat(str1, str2, n));
 }*/

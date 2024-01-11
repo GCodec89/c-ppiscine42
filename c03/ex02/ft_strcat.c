@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 09:57:22 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/11 14:16:05 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/10 12:54:26 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/10 13:09:03 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <string.h>
 #include <stdio.h>*/
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (src[i] != '\0')
+	j = 0;
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	j = 0;
-	while (src[j] != '\0' && (j < (size -1)))
+	while (src[j] != '\0')
 	{
-		dest[j] = src[j];
+		dest[i] = src[j];
+		i++;
 		j++;
 	}
-	if (size != '\0')
-	{
-		dest[j] = '\0';
-	}
-	return (i);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*int	main(void)
 {
-	char			dest[1];
-	char			src[] = "Carolina Michaelis";
-	unsigned int	s;
+	char	str1[] = "Dont";
+	char	str2[] = "Rush";
 
-	s = sizeof(dest);
-	printf("%d\n", ft_strlcpy(dest, src, s));
-	printf("%lu\n", strlcpy(dest, src, s));
+	printf("%s\n", ft_strcat(str1, str2));
+	printf("%s\n", strcat(str1, str2));
 }*/
