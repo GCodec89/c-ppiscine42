@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 08:20:11 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/16 08:41:25 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:32:56 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_print_comb2(void)
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
 	ft_print_comb2();
-}
+}*/

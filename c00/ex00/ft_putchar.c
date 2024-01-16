@@ -6,11 +6,11 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:17:53 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/08 15:54:53 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:32:11 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>*/
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {

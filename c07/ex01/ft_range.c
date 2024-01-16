@@ -1,43 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 11:59:06 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/16 17:07:33 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/16 13:28:41 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/16 13:38:11 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <string.h>
-#include <stdio.h>*/
+#include <stdlib.h>
+/*#include <stdio.h>*/
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	*ft_range(int min, int max)
 {
-	unsigned int	i;
-	int				res;
+	int	i;
+	int	len;
+	int	*dest;
 
-	i = 0;
-	res = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	len = max - min;
+	if (len <= 0)
 	{
-		if (s1[i] != s2[i])
-		{
-			res = s1[i] - s2[i];
-		}
+		dest = NULL;
+		return (dest);
+	}
+	dest = (int *)malloc(sizeof(int) * len);
+	i = 0;
+	while (i < len)
+	{
+		dest[i] = min;
+		min++;
 		i++;
 	}
-	return (res);
+	return (dest);
 }
 
 /*int	main(void)
 {
-	char			str1[] = "SamThaKid";
-	char			str2[] = "SamTheKid";
-	unsigned int	n;
+	int	peq;
+	int	gra;
+	int	*str;
+	int	i;
+	int	tam;
 
-	n = 6;
-	printf("%d\n", ft_strncmp(str1, str2, n));
-	printf("%d\n", strncmp(str1, str2, n));
+	peq = 2;
+	gra = 11;
+	i = 0;
+	tam = gra - peq;
+	str = ft_range(peq, gra);
+	while (i < tam)
+	{
+		printf("%d\n", str[i]);
+		i++;
+	}
 }*/
