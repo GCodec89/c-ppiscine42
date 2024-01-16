@@ -5,62 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 20:52:45 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/14 10:24:20 by gonolive         ###   ########.fr       */
+/*   Created: 2024/01/16 08:20:11 by gonolive          #+#    #+#             */
+/*   Updated: 2024/01/16 08:41:25 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_put_mult_char(char a, char b, char c, char d)
+void	ft_putchar(char c)
 {
-	write(1, &a, 1);
-	write(1, &b, 1);
-	write(1, " ", 1);
 	write(1, &c, 1);
-	write(1, &d, 1);
-	write(1, ",", 1);
-	write(1, " ", 1);
+}
+
+void	ft_putnbr(int n)
+{
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+	{
+		ft_putchar(n + 48);
+	}
+}
+
+void	ft_compile(int n1, int n2)
+{
+	if (n1 < 10)
+	{
+		ft_putchar('0');
+	}
+	ft_putnbr(n1);
+	ft_putchar(' ');
+	if (n2 < 10)
+	{
+		ft_putchar('0');
+	}
+	ft_putnbr(n2);
+	ft_putchar(',');
+	ft_putchar(' ');
 }
 
 void	ft_print_comb2(void)
 {
-	char	a;
-	char	b;
-	char	c;
-	char	d;
+	int	n1;
+	int	n2;
 
-	a = '0';
-	b = '0';
-	c = '0';
-	d = '1';
-	while (a <= '9')
+	n1 = 0;
+	n2 = 1;
+	while (n1 != 99)
 	{
-		while (b <= '9')
+		while (n2 != 100)
 		{
-			while (c <= '9')
-			{
-				while (d <= '9')
-				{
-					ft_put_mult_char(a, b, c, d);
-					d++;
-				}
-				d = '0';
-				c++;
-			}
-			d = '0';
-			c = '0';
-			b++;
+			ft_compile(n1, n2);
+			n2++;
 		}
-		d = '0';
-		c = '0';
-		b = '0';
-		a++;
+		n1++;
+		n2 = n1 + 1;
 	}
-	write(1, "\n", 1);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	ft_print_comb2();
-}*/
+}
