@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 09:57:22 by gonolive          #+#    #+#             */
-/*   Updated: 2024/01/16 19:35:34 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:14:14 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		i++;
 	}
 	j = 0;
-	while (src[j] != '\0' && (j < (size -1)))
+	while (src[j] != '\0' && (j < (size - 1)))
 	{
 		dest[j] = src[j];
 		j++;
